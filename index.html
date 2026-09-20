@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NextWatchMedia ADS</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+background:#050505;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+overflow-x:hidden;
+color:#fff;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top,#ff005522,transparent 35%),
+radial-gradient(circle at bottom,#0055ff22,transparent 35%);
+z-index:-1;
+}
+
+.page{
+width:100%;
+max-width:480px;
+margin:auto;
+min-height:100vh;
+padding-bottom:50px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+padding:18px;
+}
+
+.logo{
+font-size:24px;
+font-weight:800;
+letter-spacing:1px;
+}
+
+.logo span{
+color:#ff2f6d;
+}
+
+.sub{
+margin-top:6px;
+color:#999;
+font-size:13px;
+}
+
+
+/* =========================
+   PHOTO CARD
+========================= */
+
+.photo-card{
+margin:12px;
+background:#111;
+border-radius:24px;
+overflow:hidden;
+
+box-shadow:
+0 0 0 1px rgba(255,255,255,0.05),
+0 20px 40px rgba(0,0,0,0.45);
+}
+
+.photo-box{
+position:relative;
+background:#000;
+width:100%;
+}
+
+.photo-box img{
+width:100%;
+display:block;
+max-height:75vh;
+object-fit:cover;
+background:#000;
+}
+
+
+/* =========================
+   GRADIENT
+========================= */
+
+.photo-box::after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+height:140px;
+
+background:
+linear-gradient(
+to top,
+#000000dd,
+transparent
+);
+
+pointer-events:none;
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.badge{
+position:absolute;
+
+top:12px;
+left:12px;
+
+background:#ff2f6d;
+
+padding:8px 12px;
+
+border-radius:50px;
+
+font-size:12px;
+font-weight:700;
+
+z-index:5;
+
+box-shadow:
+0 5px 15px rgba(255,0,102,0.4);
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.photo-info{
+padding:16px;
+}
+
+.photo-title{
+font-size:20px;
+font-weight:700;
+line-height:1.4;
+}
+
+.photo-desc{
+margin-top:10px;
+color:#aaa;
+font-size:14px;
+line-height:1.6;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+display:flex;
+gap:14px;
+margin-top:14px;
+color:#ccc;
+font-size:13px;
+flex-wrap:wrap;
+}
+
+
+/* =========================
+   WATCH BUTTON
+========================= */
+
+.watch-button{
+display:block;
+
+margin-top:18px;
+
+width:100%;
+
+padding:15px 20px;
+
+background:#ff2f6d;
+
+color:#fff;
+
+text-align:center;
+
+text-decoration:none;
+
+font-size:15px;
+
+font-weight:800;
+
+letter-spacing:.7px;
+
+border-radius:14px;
+
+transition:
+transform .2s ease,
+background .2s ease,
+box-shadow .2s ease;
+
+box-shadow:
+0 8px 20px rgba(255,47,109,.25);
+}
+
+.watch-button:hover{
+background:#ff477d;
+
+transform:translateY(-2px);
+
+box-shadow:
+0 12px 25px rgba(255,47,109,.4);
+}
+
+.watch-button:active{
+transform:scale(.98);
+}
+
+
+/* =========================
+   TRENDING
+========================= */
+
+.section-title{
+padding:18px 16px 10px;
+font-size:18px;
+font-weight:700;
+}
+
+
+/* =========================
+   ADS
+========================= */
+
+.ads-card{
+margin:12px;
+
+background:#121212;
+
+border-radius:20px;
+
+padding:14px;
+
+border:1px solid rgba(255,255,255,0.05);
+
+overflow:hidden;
+}
+
+.ads-label{
+color:#777;
+font-size:11px;
+text-transform:uppercase;
+margin-bottom:12px;
+letter-spacing:1px;
+}
+
+
+/* =========================
+   HISTATS
+========================= */
+
+.histats-box{
+margin:12px;
+
+padding:12px;
+
+background:#121212;
+
+border-radius:16px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,0.05);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+text-align:center;
+color:#666;
+font-size:12px;
+padding:30px 15px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+.photo-title{
+font-size:18px;
+}
+
+.photo-box img{
+max-height:70vh;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<div class="header">
+
+<div class="logo">
+Next Viral <span>Hubs</span>
+</div>
+
+<div class="sub">
+Watch trending viral videos everyday 🔥
+</div>
+
+</div>
+
+
+<!-- =========================
+     PHOTO CARD
+========================= -->
+
+<div class="photo-card">
+
+<div class="photo-box">
+
+<div class="badge">
+🔥 TRENDING
+</div>
+
+<img
+id="mainPhoto"
+src="https://cdn.aceimg.com/8sGYC6Fn4.jpg"
+alt="Trending Photo"
+loading="eager"
+>
+
+</div>
+
+
+<!-- INFO -->
+
+<div class="photo-info">
+
+<div class="photo-title">
+Hot Trending Video Tonight 😍
+</div>
+
+<div class="photo-desc">
+Watch the latest viral content people are talking about right now.
+</div>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div>
+👁 7.3M Views
+</div>
+
+<div>
+❤️ 591K Likes
+</div>
+
+<div>
+🔥 Trending
+</div>
+
+</div>
+
+
+<!-- WATCH NOW -->
+
+<a
+id="watchButton"
+class="watch-button"
+href="https://t.co/z3VAr8UduA"
+target="_blank"
+rel="noopener noreferrer"
+>
+
+WATCH NOW
+
+</a>
+
+</div>
